@@ -1,2 +1,3 @@
-# matador-monstros-vue
-Projeto em Vue
+# Matador de monstro
+Projeto em Vue básico feito com o curso da Udemy.
+
