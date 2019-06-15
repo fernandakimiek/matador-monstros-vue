@@ -15,6 +15,7 @@
       <h1 class="title">Matador de Monstros</h1>
       <div class="panel scores">
         <div class="score">
+          <img class="lutador" src="./imagens/lutador.png" alt="lutador">
           <h1>Jogador</h1>
           <div class="life-bar">
             <div
@@ -26,6 +27,7 @@
           <div>{{ playerLife }}%</div>
         </div>
         <div class="score">
+          <img class="monstro" src="./imagens//monstro.png" alt="monstro">
           <h1>Monstro</h1>
           <div class="life-bar">
             <div
@@ -47,16 +49,19 @@
           <button @click="attack(true)" class="btn especial-attack">
             Ataque especial
           </button>
-          <button class="btn heal">Curar</button>
+          <button @click="healAndHurt" class="btn heal">Curar</button>
           <button @click="running = false" class="btn give-up">Desistir</button>
         </template>
         <button v-else @click="startGame" class="btn new-game">
           Iniciar jogo
         </button>
       </div>
-      <div class="panel logs"></div>
+      <div v-if="logs.length" class="panel logs">
+        <ul>
+          <li v-for="log in logs" :class="log.cls" class="log">{{ log.text }}</li>
+        </ul>
+      </div>
     </div>
-
     <script src="app.js"></script>
   </body>
 </html>
